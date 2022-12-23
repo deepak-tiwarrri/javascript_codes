@@ -1,1 +1,2 @@
-# javascript_codes
+# javascript all session codes 
+### has all the sample codes
