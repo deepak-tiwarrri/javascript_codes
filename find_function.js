@@ -16,3 +16,6 @@ for (let i = 0; i < data.length; i++) {
 const filterValue = data.filter(item=>item._id ==='4');
 console.log(filterValue);
 
+let a=[1,2,3,4,5];
+console.log(a.splice(2,4));
+console.log(a.slice(2,4));
