@@ -23,7 +23,7 @@ function secondMostFrequentElement(nums) {
       secMaxEle = Math.min(secMaxEle, ele);
     }
   }
-  return secMaxEle;
+  return secMaxEle;e
 }
 let nums = [100, 200, 200, 300, 300];
 let result = secondMostFrequentElement(nums);
