@@ -11,5 +11,5 @@ function rotateArrayByOne(nums){
 let nums =  [-1, 0, 3, 6];
 let result = rotateArrayByOne(nums);
 for(let val of result){
-   console.log(val," ");
+   console.log(val," ");   
 }
