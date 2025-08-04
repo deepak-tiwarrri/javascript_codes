@@ -1,3 +1,4 @@
+
 function flattenArray(arr) {
   const ans = [];
   function helper(arr) {
@@ -45,7 +46,7 @@ const flattenArrayTwo = (arr)=>{
 }
 
 const arr = [1, 2, 3, [4, 5, 6], [7, 8, [9, 10, 11], 12], [13, 14, 15]];
-// const result = flattenArrayTwo(arr);
-const res = flat(arr, 1);
-console.log(res);
-// console.log(result);
+const result = flattenArray(arr);
+// const res = flat(arr, 1);
+// console.log(res);
+console.log(result);
