@@ -1,5 +1,6 @@
 function leaders(nums) {
   const result = [];
+  if(nums.length===0) return nums;
   let maxEle = nums[nums.length - 1];
   result.push(nums[nums.length - 1]);
   for (let i = nums.length - 2; i >= 0; i--) {
