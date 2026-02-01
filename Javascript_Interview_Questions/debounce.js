@@ -11,6 +11,7 @@ function debounce(func,wait=200){
       },wait)
    }
 }
+
 let startTime = Date.now();
 const fetchData = ()=>{
    console.log(`fetchData called after ${Date.now()-startTime}`);
