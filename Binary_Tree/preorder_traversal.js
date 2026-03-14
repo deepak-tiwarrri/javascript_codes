@@ -14,9 +14,9 @@ function preorderTraversal(root, arr = []) {
   return arr;
 }
 
-function preOrderIterative(root) {
+export function preOrderIterative(root) {
   let arr = [];
-  if (root === null) return ans;
+  if (root === null) return arr; // return empty array when tree is empty
   let stack = [];
   stack.push(root);
   while (stack.length > 0) {
