@@ -27,16 +27,33 @@ function throttle2(mainFunction, delay) {
     }, delay);
   };
 }
-function sayHello(){
-   console.log(`My name is ${this.name} at ${new Date().toLocaleTimeString()}`);
+function sayHello() {
+  console.log(`My name is ${this.name} at ${new Date().toLocaleTimeString()}`);
 
 }
 const amy = {
-   name:"Amy",
-   speak: throttle(sayHello,2000),
+  name: "Amy",
+  speak: throttle(sayHello, 2000),
 }
 // amy.speak();
-setInterval(()=>{
-   amy.speak();
-},500)
+setInterval(() => {
+  amy.speak();
+}, 500)
 
+
+
+function throttleFn(fn, delay) {
+  let timer = null;
+  let lastTimeExecuted = 0;
+  return function (...args) {
+    if(timer===null){
+      fn.apply(this,args)
+    }
+    let currentTime = Date.now();
+    if(lastTimeExecuted-currentTime>=delay){
+      fn.apply(this,args);
+      lastTimeExecuted = currentTime;
+    }
+  }
+}
+console.log(Date.now());
