@@ -18,15 +18,15 @@ const result = getReversedName(getFirstName(getUpperCase(getName({'name':'Rahul 
 //pipe(getName,getUpperCase,getFirstName,getReverseName)
 
 
-function pipe(...fncs) {
+function pipe(...funcs) {
    //returning new function to take initial arguments
-   return function (initialArgument) {
-      let result = initialArgument;
-      for(let fn of fncs){
-         result = fn(result);
-      }
-      return result;
+  return function(initialArgument){
+   let result = initialArgument;
+   for(let fn of funcs){
+      result = fn(result);
    }
+   return result;
+  }
 }
 
 //using reduce mehtod
@@ -39,6 +39,36 @@ function pipeReduce(...fncs){
       },initialArgument)
    }
 }
+
+//what if the function is 
+function pipeAsync(...funcs) {
+    //pipe async will have asynchronous fucntion in the argument
+    //so we have to resolve that promise
+    return async function (initialArgument) {
+        let result = initialArgument;
+        //it will now return promise
+        for (let fn of funcs) {
+            //return the promise
+            result = await fn(result);
+        }
+        return result;
+    }
+}
+
+const addOne = (x) => x + 1;
+const doubleAsync = (x) => new Promise(res => setTimeout(() => res(x * 2), 1000));
+const square = (x) => x * x;
+
+const pipeline = pipeAsync(addOne, doubleAsync, square);
+
+pipeline(2).then(console.log);
+// Step 1: 2 + 1 = 3
+// Step 2: 3 * 2 = 6 (after 100ms)
+// Step 3: 6 * 6 = 36
+// Outputs: 36
+
+
+
 let ans = pipeReduce(getName,getUpperCase,getFirstName,getReversedName);
 console.log(ans({'name':"Rahul Ohol"}));
 
