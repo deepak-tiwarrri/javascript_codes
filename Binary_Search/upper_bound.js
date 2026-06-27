@@ -14,6 +14,27 @@ function upperBound(nums, x) {
   }
   return ans;
 }
+function upperBoundII(nums,x){
+  //smallest nums[mid]>x
+  let n = nums.lenght;
+  let low = 0,high = n-1;
+  let ans = n;
+  while(low<=high){
+    let mid = low + Math.floor((high-low)/2);
+    if(nums[mid]>x){
+      ans = mid;
+      //move left to find the smallest index
+      console.log(`mid: ${mid}`);
+      console.log(`----moving left now---`);
+      high = mid-1;
+    }else{
+      console.log()
+      low = mid+1;
+    }
+  }
+  return ans;
+}
+
 
 // Example Usage:
 let nums = [2, 5, 9, 10, 11, 15, 22];

@@ -1,7 +1,8 @@
 function lowerBound(nums, x) {
+  let n = nums.lenght;
   let low = 0,
-    high = nums.length - 1;
-  let ans = nums.length;
+    high = n - 1;
+  let ans = n;
   while (low <= high) {
     let mid = low + Math.floor((high - low) / 2);
     if (nums[mid] >= x) {
