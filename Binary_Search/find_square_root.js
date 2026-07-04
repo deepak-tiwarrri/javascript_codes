@@ -21,3 +21,7 @@ function findSquareRoot(n) {
 
 let result = findSquareRoot(20);
 console.log(result);
+
+let nums = [7, 15, 6, 3];
+let maxi = Math.max(...nums);
+console.log(maxi);

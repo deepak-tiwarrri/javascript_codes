@@ -35,6 +35,7 @@ const buildTree=(preorder,inorder)=>{
    return buildBT(inStart,inEnd,preStart,preEnd);
 }
 
+
 let preorder = [3,4,5,6,2,9]; 
 let inorder = [5,4,6,3,2,9];
 let root = buildTree(preorder,inorder);
