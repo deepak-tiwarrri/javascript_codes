@@ -8,7 +8,7 @@ function check(x, k, stalls) {
       countCow++;
       lastPlace = stalls[i];
     }
-
+ 
     if (countCow >= k) return true;
   }
   return false;

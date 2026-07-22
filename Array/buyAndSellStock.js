@@ -21,7 +21,6 @@ console.log(res2);
 
 
 // Output: 0
-
 // Explanation: In this case, no transactions are made. Therefore, the maximum profit remains 0.
 
 let arr3 = [3, 8, 1, 4, 6, 2]
