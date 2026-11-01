@@ -13,6 +13,21 @@ function deepCopy(obj) {
   return copiedVal;
 }
 
+
+function deepCopyII(obj){
+  if(typeof obj!=='object' ||  obj===null) return obj;
+  const copiedValue  =  Array.isArray(obj)? []: {};
+  let keysOfObj = Object.keys(obj);
+  for(let key of keysOfObj){
+    console.log(`key: ${key}`);
+    copiedValue[key] = deepCopy(obj[key]);
+  }
+  return copiedValue;
+
+}
+
+
+
 const res = {
   name: "Deepak",
   age: 18,
@@ -29,12 +44,13 @@ const res = {
   },
 };
 
+
 function deepCopyUsingJs(obj) {
   return JSON.parse(JSON.stringify(obj));
 }
 
-const ans = deepCopy(res);
+const ans = deepCopyII(res);
 console.log(ans);
-ans.social.twitter.private.id = "everywhere@gmail.com";
-console.log(ans.social.twitter.private.id);
-console.log(res.social.twitter.private.id);
+console.log(typeof null);
+if(ans===res) console.log('true');
+else console.log('false');
